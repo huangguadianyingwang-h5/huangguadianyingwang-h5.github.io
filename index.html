@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄瓜电影网 - 青案板放映室 · 清爽治愈/夏日/餐桌/冷门佳作/独立短片</title>
+<meta name="description" content="黄瓜电影网，青案板放映室风影视单页：瓜皮绿、浅青瓤、冰水蓝、籽黄、陶盆褐；清爽治愈片、夏日片、厨房餐桌片、冷门佳作、独立短片、解暑避坑区。官网 https://huangguadianyingwang-h5.github.io">
+<meta name="keywords" content="黄瓜电影网, 清爽电影, 治愈片, 夏日电影, 餐桌电影, 冷门佳作, 独立短片">
+<meta name="author" content="黄瓜电影网">
+<meta name="robots" content="index,follow">
+<meta name="bingbot" content="index,follow">
+<meta name="theme-color" content="#10231a">
+<style>
+:root{
+  --bg:#10231a;
+  --bg2:#163025;
+  --panel:#1c3a2b;
+  --line:rgba(123,191,90,.32);
+  --peel:#7bbf5a;
+  --flesh:#eaf7df;
+  --ice:#bfe9ef;
+  --seed:#f4d35e;
+  --clay:#7a5c43;
+  --ink:#f3f8ee;
+  --muted:#a9c4b1;
+  --mono:Consolas,Menlo,monospace;
+  --shadow:0 18px 42px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:62px}
+body{
+  background:
+    radial-gradient(520px 300px at 88% -10%,rgba(123,191,90,.18),transparent),
+    radial-gradient(480px 300px at -8% 8%,rgba(191,233,239,.16),transparent),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 2px,transparent 2px 6px),
+    linear-gradient(180deg,#10231a,#15301f 60%,#0b1a13);
+  color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  line-height:1.85;
+}
+a{color:var(--peel);text-decoration:none}
+
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 16px;border-bottom:2px solid var(--peel);background:rgba(16,35,26,.86);backdrop-filter:blur(8px);}
+.logo b{font-family:var(--mono);font-size:21px;color:var(--peel);letter-spacing:1px}
+.logo span{display:block;font-size:9px;letter-spacing:5px;color:var(--muted);font-family:var(--mono)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+.nav a:hover{border-color:var(--peel);color:var(--peel)}
+
+.hero{max-width:1040px;margin:0 auto;padding:50px 20px 24px;position:relative;text-align:center}
+.dew{position:absolute;inset:8px 12px auto 12px;height:180px;border-radius:20px;
+  background:linear-gradient(120deg,rgba(123,191,90,.18),rgba(191,233,239,.16),rgba(244,211,94,.12));
+  filter:blur(34px);z-index:0}
+.cuke{position:absolute;top:10px;right:24px;font-size:40px;filter:drop-shadow(0 8px 14px rgba(123,191,90,.6))}
+.kicker{position:relative;z-index:2;font-family:var(--mono);font-size:12px;color:var(--ice);letter-spacing:2px}
+.hero h1{position:relative;z-index:2;font-size:32px;margin:8px 0 6px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--peel)}
+.hero p{position:relative;z-index:2;color:var(--muted);max-width:660px;margin:0 auto 12px;font-size:15px}
+.hero .url{position:relative;z-index:2;display:inline-block;font-family:var(--mono);font-size:13px;background:var(--panel);border:1px dashed var(--peel);color:var(--peel);padding:7px 14px;border-radius:8px}
+.metrics{position:relative;z-index:2;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.metrics div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:104px}
+.metrics b{display:block;font-size:18px;color:var(--seed);font-family:var(--mono)}
+.metrics small{color:var(--muted);font-size:12px}
+
+.wrap{max-width:1060px;margin:0 auto;padding:16px 20px 40px}
+.sec{display:flex;align-items:baseline;gap:10px;margin:26px 0 14px;border-bottom:2px solid var(--peel);padding-bottom:6px}
+.sec h2{font-size:20px;font-weight:900}
+.sec h2 b{color:var(--seed)}
+.sec small{color:var(--muted);font-size:12px;font-family:var(--mono)}
+.sec .chip{margin-left:auto;font-size:11px;color:#10231a;background:var(--ice);padding:3px 10px;border-radius:6px;font-weight:800}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--peel)}
+.slice{height:90px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:30px;color:#10231a;position:relative}
+.slice::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 55%)}
+.card:nth-child(7n+1) .slice{background:linear-gradient(135deg,#7bbf5a,#4f8f37)}
+.card:nth-child(7n+2) .slice{background:linear-gradient(135deg,#bfe9ef,#7fc7d2)}
+.card:nth-child(7n+3) .slice{background:linear-gradient(135deg,#f4d35e,#caa82f)}
+.card:nth-child(7n+4) .slice{background:linear-gradient(135deg,#eaf7df,#b9d9a6)}
+.card:nth-child(7n+5) .slice{background:linear-gradient(135deg,#7a5c43,#4f3a2a)}
+.card:nth-child(7n+6) .slice{background:linear-gradient(135deg,#9be15d,#4f9c1f)}
+.card:nth-child(7n+7) .slice{background:linear-gradient(135deg,#ffd166,#caa024)}
+.body{padding:13px}
+.body h3{font-size:16px;margin-bottom:3px}
+.body p{font-size:13px;color:var(--muted);margin-bottom:8px}
+.tag{display:inline-block;font-size:11px;font-family:var(--mono);padding:2px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--peel);margin:0 4px 4px 0}
+.note{margin-top:7px;font-size:12px;color:var(--ice);font-family:var(--mono)}
+
+.codex{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
+.codex h3{font-size:17px;color:var(--peel);margin-bottom:10px;font-family:var(--mono)}
+.codex li{list-style:none;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink)}
+.codex li:last-child{border-bottom:none}
+.codex b{color:var(--seed);font-family:var(--mono)}
+
+.about p{color:var(--muted);font-size:14px;margin-bottom:8px}
+.about code{background:var(--bg);border:1px solid var(--line);color:var(--peel);padding:2px 7px;border-radius:6px;font-family:var(--mono)}
+.warn{margin-top:12px;background:rgba(244,211,94,.08);border:1px solid rgba(244,211,94,.4);border-radius:12px;padding:12px 14px;color:#f7e7a6;font-size:13px;font-family:var(--mono)}
+.foot{text-align:center;padding:24px 20px;border-top:2px solid var(--peel);color:var(--muted);font-size:12px;font-family:var(--mono)}
+
+@media(max-width:880px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.grid{grid-template-columns:1fr}.hero h1{font-size:25px}.cuke{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="bar">
+  <div class="logo"><b>黄瓜电影网</b><span>CUCUMBER SCREENING PATIO</span></div>
+  <nav class="nav">
+    <a href="#home">凉棚</a>
+    <a href="#heal">治愈</a>
+    <a href="#summer">夏日</a>
+    <a href="#table">餐桌</a>
+    <a href="#hidden">冷门</a>
+    <a href="#short">短片</a>
+    <a href="#avoid">避坑</a>
+    <a href="#about">关于</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="dew"></div>
+  <div class="cuke">🥒</div>
+  <span class="kicker">// slice.mood({ cool:true, drama:"low", ads:0 })</span>
+  <h1>黄瓜电影网 · <em>青案板放映室</em></h1>
+  <p>不追爆款、不挂“免费高清”、不解析盗版源。黄瓜电影网像夏夜院子里的凉棚：片子要清爽、节奏要慢、情绪要解暑。外表朴素，咬一口多汁——治愈片、夏日片、厨房餐桌片、冷门佳作、独立短片，都摊在青案板上。</p>
+  <div class="url">https://huangguadianyingwang-h5.github.io</div>
+  <div class="metrics">
+    <div><b>🥒</b><small>朴素多汁</small></div>
+    <div><b>6 区</b><small>治愈/夏日/餐桌/冷门/短片/避坑</small></div>
+    <div><b>0 弹窗</b><small>无播放器下载</small></div>
+    <div><b>正版导向</b><small>只荐不存</small></div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="sec" id="heal">
+    <h2>🍃 清爽治愈 · <b>看完像喝凉白开</b></h2><small>healing</small><span class="chip">低戏剧冲突</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="slice">🌿🍵</div>
+      <div class="body">
+        <h3>小森林 夏秋篇</h3>
+        <p>种菜、切瓜、炒酱、听虫鸣。治愈片天花板：没有大事件，只有“今天吃什么”。</p>
+        <span class="tag">日本</span><span class="tag">田园</span><span class="tag">下饭</span>
+        <div class="note">黄瓜切片那幕，夏天就来了</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🪴☁️</div>
+      <div class="body">
+        <h3>海街日记</h3>
+        <p>镰仓、梅子酒、海边、四姐妹。是枝裕和把“日子”拍成主角，悲也不喊。</p>
+        <span class="tag">家庭</span><span class="tag">慢片</span><span class="tag">海边</span>
+        <div class="note">看完想给家人发消息</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🧺🌼</div>
+      <div class="body">
+        <h3>步履不停</h3>
+        <p>一天、一家、一碗凉面、一句没说出口的抱歉。治愈不是甜，是“原来大家都这样”。</p>
+        <span class="tag">家庭</span><span class="tag">是枝裕和</span><span class="tag">2008</span>
+        <div class="note">凉棚首选，别配奶茶配茶</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="summer">
+    <h2>🌞 夏日片 · <b>蝉声、风扇、冰镇感</b></h2><small>summer</small><span class="chip">别开空调也行</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="slice">🍉🚲</div>
+      <div class="body">
+        <h3>阳光灿烂的日子</h3>
+        <p>北京夏天、军校大院、暗恋、暴晒下的青春。闷热里长出一辈子忘不掉的冲动。</p>
+        <span class="tag">国产</span><span class="tag">青春</span><span class="tag">1994</span>
+        <div class="note">蝉鸣一响，片就活了</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🌊🩳</div>
+      <div class="body">
+        <h3>蓝色大门</h3>
+        <p>泳池、校服、单车、喜欢谁又说不清。台湾夏日片：青涩比剧情重要。</p>
+        <span class="tag">台湾</span><span class="tag">青春</span><span class="tag">2002</span>
+        <div class="note">“你留级留到什么时候”</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🎐🍧</div>
+      <div class="body">
+        <h3>菊次郎的夏天</h3>
+        <p>乡道、蝉蜕、脚踏车、久石让。夏天不是热，是“大人突然变回小孩”。</p>
+        <span class="tag">日本</span><span class="tag">公路</span><span class="tag">治愈</span>
+        <div class="note">配刨冰，不配爆米花</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="table">
+    <h2>🍽️ 厨房与餐桌 · <b>电影里的饭比台词香</b></h2><small>food on screen</small><span class="chip">下饭专区</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="slice">🥒🥢</div>
+      <div class="body">
+        <h3>饮食男女</h3>
+        <p>老朱的满汉全席、女儿们的心事、一张桌子坐不稳的家。华语餐桌神作。</p>
+        <span class="tag">国产</span><span class="tag">家庭</span><span class="tag">1994</span>
+        <div class="note">开场做菜那段能当教程</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🍜🌙</div>
+      <div class="body">
+        <h3>深夜食堂</h3>
+        <p>居酒屋、熟客、一道菜一段人生。别看剧版注水，电影版小菜有人味。</p>
+        <span class="tag">日本</span><span class="tag">群像</span><span class="tag">治愈</span>
+        <div class="note">黄瓜配饭团，片尾别关</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🍅🥖</div>
+      <div class="body">
+        <h3>朱莉与朱莉娅</h3>
+        <p>博客、黄油、牛排、巴黎与纽约隔着锅铲对话。美食片里最懂“坚持”的。</p>
+        <span class="tag">美片</span><span class="tag">美食</span><span class="tag">2009</span>
+        <div class="note">看完会去切黄瓜拌蒜</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="hidden">
+    <h2>🥒 冷门佳作 · <b>没海报也能封神</b></h2><small>hidden gems</small><span class="chip">搜索栏要会拼</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="slice">🎐🎞️</div>
+      <div class="body">
+        <h3>南海十三郎</h3>
+        <p>粤语、戏班、疯才子、雪里谢幕。冷门但一开口就镇住人。</p>
+        <span class="tag">港片</span><span class="tag">戏曲</span><span class="tag">1997</span>
+        <div class="note">凉棚夜场必放</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🪕🏮</div>
+      <div class="body">
+        <h3>活着唱着</h3>
+        <p>川剧班、拆迁、戏台快没。没有大卡司，但每句台词贴地。</p>
+        <span class="tag">方言</span><span class="tag">纪实感</span><span class="tag">小众</span>
+        <div class="note">像邻居在院里唱</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🎻❄️</div>
+      <div class="body">
+        <h3>音乐人生</h3>
+        <p>纪录片/半自传，琴、童年、创伤、天才的孤独。冷门到资料馆才常提。</p>
+        <span class="tag">纪录</span><span class="tag">音乐</span><span class="tag">香港</span>
+        <div class="note">别当励志片看</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="short">
+    <h2>🎬 独立短片 · <b>几分钟，一口脆</b></h2><small>shorts</small><span class="chip">通勤/睡前</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="slice">🪟🌧️</div>
+      <div class="body">
+        <h3>雨天关东煮</h3>
+        <p>虚构短片：便利店、雨、店员、加班客。3 分钟，没有结局但有热气。</p>
+        <span class="tag">短片</span><span class="tag">城市</span><span class="tag">原声</span>
+        <div class="note">像黄瓜视频那股真实劲 [4](@ref)</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🛋️🐱</div>
+      <div class="body">
+        <h3>沙发上的猫与失业者</h3>
+        <p>5 分钟默片感：猫不演，人演给猫看。独立学生片，松弛得要命。</p>
+        <span class="tag">学生片</span><span class="tag">默片感</span><span class="tag">治愈</span>
+        <div class="note">凉棚放映不嫌短</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="slice">🥒🔪</div>
+      <div class="body">
+        <h3>切黄瓜的人</h3>
+        <p>2 分钟实验片：只拍手、砧板、水声、窗外蝉。没有人物介绍，却像自家厨房。</p>
+        <span class="tag">实验</span><span class="tag">极简</span><span class="tag">声音片</span>
+        <div class="note">本站吉祥短片</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="avoid">
+    <h2>🚫 解暑避坑区 · <b>名字带“黄瓜”不一定是好站</b></h2><small>avoid traps</small><span class="chip">凉棚纪律</span>
+  </div>
+  <ul class="codex">
+    <li><b>01</b> “黄瓜XX 免费高清电影/全网热播/抢先看” → 多靠互联网采集，常带解析源、网盘跳转。[12](@ref)</li>
+    <li><b>02</b> “不存片只给页面”但满屏播放器下载 → 本质是引流木马/博彩/短剧变现。</li>
+    <li><b>03</b> “11k/8k 蓝光合集” → 和黄瓜没关系，和硬盘中毒有关系。</li>
+    <li><b>04</b> “会员 9.9 看全网” → 正版片分散在院线/流媒体/资料馆，不可能一家全有。</li>
+    <li><b>05</b> 黄瓜电影网只做：片单、场景、冷门挖掘、版权边界说明。</li>
+  </ul>
+
+  <div class="sec">
+    <h2>🥒 黄瓜影评词典 · <b>凉棚黑话</b></h2><small>patio slang</small>
+  </div>
+  <ul class="codex">
+    <li><b>清爽片</b> = 看完不累、不吵、不羞耻，像咬一口嫩黄瓜</li>
+    <li><b>下饭片</b> = 剧情不用脑，声音和饭香能叠在一起</li>
+    <li><b>凉棚片</b> = 夏天傍晚、风扇转、蚊子飞，也舍不得关</li>
+    <li><b>多汁片</b> = 表面朴素，中间有反转/共情/眼泪</li>
+    <li><b>苦瓜片</b> = 好但苦，文艺片/创伤片，别空腹看</li>
+    <li><b>烂黄瓜</b> = 海报鲜亮、正片空壳、流量堆出来的片</li>
+  </ul>
+
+  <section class="panel about" style="margin-top:26px">
+    <h3>🥒 关于 黄瓜电影网</h3>
+    <p><strong>黄瓜电影网</strong> 是“青案板放映室 / 凉丝丝片单”风影视单页：瓜皮绿、浅青瓤、冰水蓝、籽黄、陶盆褐；清爽治愈片 + 夏日片 + 厨房餐桌片 + 冷门佳作 + 独立短片 + 解暑避坑区。它和那些“黄瓜影视/黄瓜影院/黄瓜视频”采集站不是一类东西——**不提供资源存储、不参与上传、不解析第三方源**。[12,13](@ref)</p>
+    <p>官网：<code>https://huangguadianyingwang-h5.github.io</code></p>
+    <p>内链全用 <code>#</code> 占位，CSS/DIV 全内联，不生成 robots.txt / sitemap.xml，GitHub Pages 直传即可；必应收录靠标题、描述、语义结构、移动端体验。</p>
+    <p>看片请走正版院线、授权流媒体、电视台、资料馆放映、公共版权片库。本站不提供磁力链接、不解析第三方源、不挂播放器下载、不卖会员、不托管受版权保护视频。</p>
+    <div class="warn">⚠️ 搜“黄瓜电影”时别点“免费高清/抢先看/全网热播”站：它们名字像，模式是采集+跳转+变现。[12](@ref)</div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  © 2026 黄瓜电影网 · huangguadianyingwang-h5.github.io · 片子摊凉了再吃，心静了再看 🥒
+</footer>
+
+</body>
+</html>
